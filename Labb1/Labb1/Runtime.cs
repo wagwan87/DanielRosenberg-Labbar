@@ -11,46 +11,85 @@ namespace Labb1
         public void Start()
         {
 
-            Dog dog1 = new Dog
+            //Dog dog1 = new Dog
+            //{
+            //    Name = "Dogmeat",
+            //    Age = 8,
+            //    Breed = "German Shepherd"
+            //};
+
+            //Dog dog2 = new Dog
+            //{
+            //    Name = "Lassie",
+            //    Age = 40,
+            //    Breed = "Collie",
+            //};
+
+            //Dog dog3 = new Dog
+            //{
+            //    Name = "Beethoven",
+            //    Age = 12,
+            //    Breed = "St. Bernard",
+            //};
+
+            //Console.WriteLine(dog1.Name);
+
+            //Console.WriteLine(dog1.Age);
+
+            //Console.WriteLine(dog1.Breed);
+
+            //Console.WriteLine(dog2.Name);
+
+            //Console.WriteLine(dog2.Age);
+
+            //Console.WriteLine(dog2.Breed);
+
+            //Console.WriteLine(dog3.Name);
+
+            //Console.WriteLine(dog3.Age);
+
+            //Console.WriteLine(dog3.Breed);
+
+           
+
+            List<Dog> doggies = new List<Dog>()
             {
-                Name = "Dogmeat",
-                Age = 8,
-                Breed = "German Shepherd"
+                new Dog {Name = "Dogmeat" , Age = 4, Breed = "German Shepherd" },
+                new Dog {Name = "Lassie" , Age = 40, Breed = "Collie" },
+                new Dog {Name = "Beethoven" , Age = 15, Breed = "St. Bernhard" },
             };
 
-            Dog dog2 = new Dog
+            Menu.StartMenu();
+
+            int input = int.Parse(Console.ReadLine());
+
+            switch (input)
             {
-                Name = "Lassie",
-                Age = 40,
-                Breed = "Collie",
-            };
+                case 1:
+                    foreach (var dogs in doggies)
+                    {
+                        Console.WriteLine(dogs.Introduction());
+                    }
 
-            Dog dog3 = new Dog
-            {
-                Name = "Beethoven",
-                Age = 12,
-                Breed = "St. Bernard",
-            };
+                    break;
 
-            Console.WriteLine(dog1.Name);
+                case 2:
 
-            Console.WriteLine(dog1.Age);
+                    break;
 
-            Console.WriteLine(dog1.Breed);
+                case 3:
 
-            Console.WriteLine(dog2.Name);
+                    break;
 
-            Console.WriteLine(dog2.Age);
+                case 4:
 
-            Console.WriteLine(dog2.Breed);
+                    break;
 
-            Console.WriteLine(dog3.Name);
+                default:
 
-            Console.WriteLine(dog3.Age);
+                    break;
 
-            Console.WriteLine(dog3.Breed);
-
-            List <Dog> doggies = new List<Dog> 
+            }
 
         }
 

@@ -50,7 +50,7 @@ namespace Labb1
 
             //Console.WriteLine(dog3.Breed);
 
-           
+
 
             List<Dog> doggies = new List<Dog>()
             {
@@ -59,39 +59,74 @@ namespace Labb1
                 new Dog {Name = "Beethoven" , Age = 15, Breed = "St. Bernhard" },
             };
 
-            Menu.StartMenu();
+           
 
-            int input = int.Parse(Console.ReadLine());
+            bool continueloop = true;
 
-            switch (input)
+            do
             {
-                case 1:
-                    foreach (var dogs in doggies)
-                    {
-                        Console.WriteLine(dogs.Introduction());
-                    }
+                Menu.StartMenu();
+                int input = int.Parse(Console.ReadLine());
+                switch (input)
+                {
+                    case 1:
+                        foreach (var dogs in doggies)
+                        {
+                            Console.WriteLine(dogs.Introduction());
 
-                    break;
 
-                case 2:
+                        }
 
-                    break;
+                        Console.WriteLine("Press any key to return to menu");
+                        Console.ReadKey();
+                        Console.Clear();
 
-                case 3:
 
-                    break;
 
-                case 4:
+                        break;
 
-                    break;
+                    case 2:
+                        Console.WriteLine("Name");
+                        string name = Console.ReadLine();
+                        Console.WriteLine("Age");
+                        int age = int.Parse(Console.ReadLine());
+                        Console.WriteLine("Breed");
+                        string breed = Console.ReadLine();
 
-                default:
+                        doggies.Add(new Dog { Name = name, Age = age, Breed = breed });
 
-                    break;
+                        break;
+
+                    case 3:
+                        Console.WriteLine("Which would you like to remove?");
+                        int remove = int.Parse(Console.ReadLine());
+                        doggies.RemoveAt(remove);
+
+                        Console.WriteLine("Press any key to return to menu");
+                        Console.ReadKey();
+                        Console.Clear();
+
+
+                        break;
+
+                    case 4:
+                        continueloop = false;
+                        break;
+
+                    default:
+                        Console.WriteLine("Invalid input");
+
+
+
+                        break;
+                }
+                } while (continueloop == true) ;
+
 
             }
 
-        }
 
     }
+
 }
+

@@ -11,8 +11,8 @@ namespace Labb6
         public void Start()
         {
             UI.WelcomeScreen();
-    
-           UI.EnvironmentMenu();
+
+            UI.EnvironmentMenu();
         }
     }
 }
